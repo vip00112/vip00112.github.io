@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'nanum';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Nanum Gothic Regular'), local('NanumGothic-Regular'),
+    url(../fonts/NanumGothic-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'nanum';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Nanum Gothic Bold'), local('NanumGothic-Bold'),
+    url(../fonts/NanumGothic-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'nanum';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Nanum Gothic ExtraBold'), local('NanumGothic-ExtraBold'),
+    url(../fonts/NanumGothic-ExtraBold.ttf) format('truetype');
+}
