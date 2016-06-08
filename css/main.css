@@ -32,7 +32,6 @@
         
         #content,
         #content .aux {
-            min-height: 400px;
             background-color: #fff;
         }
         
@@ -48,6 +47,11 @@
         #footer .aux {
             height: 50px;
             background-color: #fff;
+        }
+        
+        #footer .aux span {
+            display: block;
+            color: #aaa;
         }
         
         .aux {
