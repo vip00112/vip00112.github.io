@@ -12,7 +12,73 @@
     <link rel="stylesheet" href="css/header.css" />
 
     <style>
-
+        #wlcome {
+            font-size: 40px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        #portfolioList::after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+        
+        #portfolioList>li {
+            width: 1198px;
+            border: 1px solid transparent;
+            transition: .2s ease;
+        }
+        
+        #portfolioList>li:hover {
+            border: 1px solid #f00;
+        }
+        
+        #portfolioList>li a {
+            display: block;
+            width: 1178px;
+            margin: 10px 0 10px 10px;
+        }
+        
+        #portfolioList>li a::after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+        
+        #portfolioList>li a img {
+            display: block;
+            width: 148px;
+            height: 148px;
+            float: left;
+        }
+        
+        #portfolioList>li a .desc {
+            display: block;
+            width: 1000px;
+            float: left;
+            margin-left: 10px;
+            padding: 0 10px;
+            text-decoration: none;
+            color: #424242;
+        }
+        
+        #portfolioList>li a .desc.project_name {
+            height: 68px;
+            line-height: 68px;
+            font-size: 40px;
+        }
+        
+        #portfolioList>li a .desc.title {
+            height: 40px;
+            line-height: 40px;
+            font-size: 17px;
+        }
+        
+        #portfolioList>li a .desc.use_tool {
+            height: 40px;
+            line-height: 40px;
+        }
     </style>
 </head>
 
@@ -22,7 +88,8 @@
             <ul id="gnv">
                 <li><a href="index.html" class="on" title="홈">Home</a></li>
                 <li><a href="portfolio.html" title="포트폴리오">Portfolio</a></li>
-                <li><a href="https://github.com/vip00112" target="_blank" title="github 페이지">Github</a></li>
+                <li><a href="https://github.com/vip00112" target="_blank" title="github">Github</a></li>
+                <li><a href="https://vip00112.blogspot.com" target="_blank" title="개인 블로그">Blog</a></li>
             </ul>
         </div>
         <!-- // .aux -->
@@ -31,10 +98,35 @@
 
     <div id="content">
         <div class="aux">
+            <h2 id="wlcome">Welcome to GT's github page</h2>
+
+            <ul id="portfolioList">
+                <li class="easyon">
+                    <!-- itemTmp -->
+                </li>
+
+                <li class="onair">
+                    <!-- itemTmp -->
+                </li>
+
+                <li class="ares">
+                    <!-- itemTmp -->
+                </li>
+            </ul>
         </div>
         <!-- // .aux -->
     </div>
     <!-- // content -->
+
+    <!-- itemTmp -->
+    <script type="text/template" id="itemTmp">
+        <a href="portfolio.html?type=<%=type%>" title="클릭시 상세 페이지 이동">
+            <img src="<%=imgs[0]%>" alt="스크린샷">
+            <h3 class="desc project_name"><%=projectName%></h3>
+            <h4 class="desc title"><%=title%></h4>
+            <h4 class="desc use_tool"><%=userTool%></h4>
+        </a>
+    </script>
 
     <div id="footer">
         <div class="aux">
@@ -47,6 +139,39 @@
 
     <!-- script load -->
     <script src="js/jquery.js"></script>
+    <script src="js/underscore-min.js"></script>
+    <script>
+        var itemTmpFunc = _.template($("#itemTmp").html());
+
+        // DOM load 완료시 설정
+        $(window).load(function () {
+            var $items = $("#portfolioList li");
+
+            // json read ajax
+            $.each($items, function () {
+                var $this = $(this);
+                var itemName = $this.attr("class");
+
+                $.ajax("json/" + itemName + ".json", {
+                    type: "get",
+                    dataType: "json",
+                    error: function (xhr, error, code) {
+                        alert("Can not load item : " + code);
+                    },
+                    success: function (json) {
+                        var code = itemTmpFunc({
+                            type: itemName,
+                            imgs: json["imgs"],
+                            projectName: json["projectName"],
+                            title: json["title"],
+                            userTool: json["useTool"]
+                        });
+                        $this.html(code);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

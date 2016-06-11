@@ -1,0 +1,33 @@
+{
+    "title": "친구 관리, 그룹 관리, 쪽지 기능이 있는 Windows 기반 메신저 프로그램",
+    "imgs": [
+        "img/easyon/1.png",
+        "img/easyon/2.png",
+        "img/easyon/3.png",
+        "img/easyon/4.png",
+        "img/easyon/5.png",
+        "img/easyon/6.png",
+        "img/easyon/7.png",
+        "img/easyon/8.png",
+        "img/easyon/9.png",
+        "img/easyon/10.png"
+    ],
+    "projectName": "EasyOn",
+    "useTool": "java, C#, MySql, Navicat",
+    "codeUrl": [
+        "http://github.com/vip00112/easyon_client",
+        "http://github.com/vip00112/easyon_server"
+    ],
+    "reason": [
+        "java와 C# 단일 언어 만으로는 서버/클라이언트를 모두 구현 해보았습니다.",
+        "하지만 두가지 언어를 접목한 프로젝트는 머리속으로 구조만 그려보고, 실질적인 결과물을 만들어본적이 없었기에 진행하기로 결정 하였습니다."
+    ],
+    "desc": [
+        "netty를 이용하여 java 소켓 서버를 구축 하였고, C#을 이용하여 클라이언트를 구현 하였습니다.",
+        "멀티 쓰레드 구조로 작동 되기때문에 보다 효율적인 리소스 관리를 위하여 서버단 에서의 모든 쓰레드는 ThreadPool을 적용 하였습니다.",
+        "클라이언트를 C# 으로 구현한 이유는 아래와 같습니다.",
+        "첫째, 메신저의 특성상 이벤트 기반 처리가 편리하기 때문",
+        "둘째, java보다 GUI 표현이 우수하기 때문",
+        "셋째, windows사용자를 대상으로 하기 때문에 개발사인 Microsoft의 최근 주력 상품인 .NET이 유리 하다고 판단"
+    ]
+}
