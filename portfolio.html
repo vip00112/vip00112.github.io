@@ -191,6 +191,7 @@
     <div id="content">
         <div class="aux">
             <ul id="itemList">
+                <li class="simpleboard">SimpleBoard</li>
                 <li class="easyon">EasyOn</li>
                 <li class="onair">ON AIR</li>
                 <li class="ares">ARES</li>
@@ -253,7 +254,7 @@
 
         <dt>사용 도구</dt>
         <dd>
-            <%=userTool%>
+            <%=useTool%>
         </dd>
 
         <dt>소스 코드</dt>
@@ -357,7 +358,7 @@
 
                     var itemCode = itemTmpFunc({
                         projectName: json["projectName"],
-                        userTool: json["useTool"],
+                        useTool: json["useTool"],
                         codeUrl: json["codeUrl"],
                         reason: json["reason"],
                         desc: json["desc"]
