@@ -61,35 +61,6 @@
             overflow: hidden;
         }
         
-        #itemBox .box_imgs .move {
-            display: block;
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-            position: absolute;
-            top: 50%;
-            margin-top: -25px;
-            font-size: 30px;
-            cursor: pointer;
-            z-index: 1;
-            color: #bdbdbd;
-            transition: .2s ease;
-        }
-        
-        #itemBox .box_imgs .move:hover {
-            color: red;
-        }
-        
-        #itemBox .box_imgs .move.left {
-            left: 0;
-            display: none;
-        }
-        
-        #itemBox .box_imgs .move.right {
-            right: 0;
-        }
-        
         #itemBox .box_imgs ul {
             position: absolute;
             left: 0;
@@ -160,7 +131,6 @@
             left: 0;
             top: 0;
             z-index: 2;
-            cursor: pointer;
             background-color: rgba(0, 0, 0, .5);
             overflow: scroll;
             display: none;
@@ -170,6 +140,36 @@
             display: block;
             margin: auto;
             margin-top: 70px;
+            cursor: pointer;
+        }
+        
+        .move {
+            display: block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            margin-top: -25px;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 1;
+            color: #bdbdbd;
+            transition: .2s ease;
+        }
+        
+        .move:hover {
+            color: red;
+        }
+        
+        .move.left {
+            left: 0;
+            display: none;
+        }
+        
+        .move.right {
+            right: 0;
         }
     </style>
 </head>
@@ -221,7 +221,9 @@
             <!-- // itemBox -->
 
             <div id="zoomBox">
-                <img src="" alt="스크린샷 확대">
+                <i class="fa fa-chevron-left left move"></i>
+                <i class="fa fa-chevron-right right move"></i>
+                <img src="" alt="스크린샷 확대" title="클릭시 이전 화면으로 돌아 갑니다.">
             </div>
             <!-- // zoonBox -->
         </div>
@@ -294,9 +296,15 @@
         var maxWidth = $("#itemBox .box_imgs ul>li").width();
         var maxHeight = $("#itemBox .box_imgs ul>li").height();
 
+        var imgList = [];
+        var viewIdx = 0;
+        var viewIdxMax = 0;
+
         // DOM
         var $leftBtn = $("#itemBox .box_imgs .move.left");
         var $rightBtn = $("#itemBox .box_imgs .move.right");
+        var $leftBtnZoom = $("#zoomBox .move.left");
+        var $rightBtnZoom = $("#zoomBox .move.right");
 
         // _ template
         var imgTmpFunc = _.template($("#imgTmp").html());
@@ -368,6 +376,13 @@
                     $("#itemBox .box_imgs ul").html(imgCode);
                     $("#itemBox .desc").html(itemCode);
 
+                    viewIdx = 0;
+                    viewIdxMax = $("#itemBox .box_imgs ul li").length;
+                    imgList = [];
+                    $.each($("#itemBox .box_imgs ul li"), function () {
+                        imgList.push($(this).find("img").attr("src"));
+                    });
+
                     resetItem();
                 }
             });
@@ -435,27 +450,53 @@
 
         // 이미지 좌우 이동
         $("#itemBox .box_imgs .move").click(function () {
-            if ($(this).hasClass("left")) {
+            moveImg($(this));
+        });
+
+        // 확대 이미지 좌우 이동
+        $("#zoomBox .move").click(function () {
+            moveImg($(this));
+        });
+
+        // 이미지 변경
+        function moveImg($btn) {
+            if ($btn.hasClass("left")) {
                 left += maxWidth;
+                viewIdx--;
             } else {
                 left -= maxWidth;
+                viewIdx++;
             }
+
+            if (viewIdx < 0) {
+                viewIdx = 0;
+            } else if (viewIdx > viewIdxMax) {
+                viewIdx = viewIdxMax;
+            }
+
             $("#itemBox .box_imgs ul").css("left", left + "px");
+            $("#zoomBox img").fadeOut(200);
+            $("#zoomBox img").attr("src", imgList[viewIdx]);
+            $("#zoomBox img").fadeIn(200);
 
             var max = -((count * maxWidth) - maxWidth);
 
             if (left < 0) {
                 $leftBtn.show();
+                $leftBtnZoom.show();
             } else if (left >= 0) {
                 $leftBtn.hide();
+                $leftBtnZoom.hide();
             }
 
             if (left > max) {
                 $rightBtn.show();
+                $rightBtnZoom.show();
             } else if (left <= max) {
                 $rightBtn.hide();
+                $rightBtnZoom.hide();
             }
-        });
+        }
 
         // 이미지 확대 보기
         $("#itemBox .box_imgs").on("click", "ul>li img", function () {
@@ -463,11 +504,11 @@
             $("#zoomBox").fadeIn(200);
             $("#zoomBox img").attr("src", src);
             $("#zoomBox").scrollTop(0);
-        })
+        });
 
         // 이미지 확대 종료
-        $("#zoomBox").click(function () {
-            $(this).fadeOut(200);
+        $("#zoomBox img").click(function () {
+            $("#zoomBox").fadeOut(200);
         });
     </script>
 </body>
