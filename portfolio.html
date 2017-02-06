@@ -3,248 +3,127 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telphone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <title>GT's Page</title>
 
-    <link rel="stylesheet" href="css/reset.css" />
+    <!-- IE 9 미만 버전 javascript 미지원 기능 fix -->
+    <!--[if lt IE 9]>
+        <script src="/resources/js/ltIE9/es5-shim.min.js"></script>
+        <script src="/resources/js/ltIE9/es5-sham.min.js"></script>
+	<![endif]-->
+
     <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/noto.sans.korea.css" />
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/top.css" />
     <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+    <!-- IE 9 미만 버전 html5,반응형 지원을 위한 script
+    html5shiv.min.js : html5의 새로운 요소를 인식
+    respond.min.js : 반응형을 위한 media 쿼리를 인식 
+    -->
+    <!--[if lt IE 9]>
+        <script src="js/ltIE9/html5shiv.min.js"></script>
+        <script src="js/ltIE9/respond.min.js"></script>
+    <![endif]-->
 
     <style>
-        #itemList {
-            margin-bottom: 10px;
-        }
-        
-        #itemList::after {
-            display: block;
-            content: "";
-            clear: both;
-        }
-        
-        #itemList li {
-            display: block;
-            width: 100px;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            cursor: pointer;
-            float: left;
-            transition: .2s ease;
-        }
-        
-        #itemList li:hover,
-        #itemList li.on {
-            background-color: #424242;
-            color: #fff;
-        }
-        
-        #itemBox {
-            width: 1200px;
-            position: relative;
-        }
-        
-        #itemBox .title {
-            display: block;
-            height: 40px;
-            line-height: 40px;
-            font-size: 25px;
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-        
-        #itemBox .box_imgs {
-            width: 1200px;
-            height: 600px;
-            margin-bottom: 10px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        #itemBox .box_imgs ul {
-            position: absolute;
-            left: 0;
-            top: 0;
-            transition: .2s ease;
-        }
-        
-        #itemBox .box_imgs ul::after {
-            display: block;
-            content: "";
-            clear: both;
-        }
-        
-        #itemBox .box_imgs ul>li {
-            display: block;
-            width: 1200px;
-            height: 600px;
-            float: left;
-        }
-        
-        #itemBox .box_imgs ul>li img {
-            display: block;
-            margin: auto;
-            cursor: pointer;
-        }
-        
-        #itemBox .desc::after {
-            display: block;
-            content: "";
-            clear: both;
-        }
-        
-        #itemBox .desc dt {
-            width: 200px;
-            min-height: 30px;
-            line-height: 30px;
-            text-align: center;
-            font-weight: 700;
-            float: left;
-        }
-        
-        #itemBox .desc dd {
-            width: 1000px;
-            min-height: 30px;
-            line-height: 30px;
-            text-align: left;
-            margin-bottom: 10px;
-            float: left;
-        }
-        
-        #itemBox .desc dd a {
-            display: block;
-            width: 400px;
-            text-decoration: none;
-            color: red;
-            transition: .2s ease;
-        }
-        
-        #itemBox .desc dd a:hover {
-            text-decoration: underline;
-            text-shadow: 1px 1px 3px red;
-        }
-        
-        #zoomBox {
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            left: 0;
-            top: 0;
-            z-index: 2;
-            background-color: rgba(0, 0, 0, .5);
-            overflow: scroll;
-            display: none;
-        }
-        
-        #zoomBox img {
-            display: block;
-            margin: auto;
-            margin-top: 70px;
-            cursor: pointer;
-        }
-        
-        .move {
-            display: block;
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-            position: absolute;
-            top: 50%;
-            margin-top: -25px;
-            font-size: 30px;
-            cursor: pointer;
-            z-index: 1;
-            color: #bdbdbd;
-            transition: .2s ease;
-        }
-        
-        .move:hover {
-            color: red;
-        }
-        
-        .move.left {
-            left: 0;
-            display: none;
-        }
-        
-        .move.right {
-            right: 0;
-        }
+
     </style>
 </head>
 
 <body>
-    <div id="header">
-        <div class="aux">
-            <ul id="gnv">
-                <li><a href="index.html" title="홈">Home</a></li>
-                <li><a href="portfolio.html" class="on" title="포트폴리오">Portfolio</a></li>
-                <li><a href="https://github.com/vip00112" target="_blank" title="github">Github</a></li>
-                <li><a href="http://vip00112.tistory.com" target="_blank" title="개인 블로그">Blog</a></li>
-            </ul>
+    <div class="wrap top">
+        <div class="container">
+            <button class="gnav" title="메뉴">
+                <span>메뉴</span>
+                <i class="fa fa-caret-down"></i>
+            </button>
         </div>
-        <!-- // .aux -->
+        <!-- // .container -->
     </div>
-    <!-- // header -->
+    <!-- // .wrap.top -->
 
-    <div id="content">
-        <div class="aux">
-            <ul id="itemList">
-                <li class="simpleboard">SimpleBoard</li>
-                <li class="easyon">EasyOn</li>
-                <li class="onair">ON AIR</li>
-                <li class="ares">ARES</li>
-            </ul>
-            <hr/>
+    <div class="wrap header">
+        <div class="container">
+            <nav class="gnav">
+                <ul class="menu">
+                    <li>
+                        <a href="index.html" class="on" title="홈"><i class="fa fa-home"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href="#" title="포트폴리오"><i class="fa fa-th-large"></i> Portfolio</a>
+                        <ul class="menu sub">
+                            <li><a href="portfolio.html?type=simpleboard">SimpleBoard</a></li>
+                            <li><a href="portfolio.html?type=easyon">EasyON</a></li>
+                            <li><a href="portfolio.html?type=onair">OnAir</a></li>
+                            <li><a href="portfolio.html?type=ares">ARES</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="https://github.com/vip00112" target="_blank" title="github"><i class="fa fa-github"></i> Github</a>
+                    </li>
+                    <li>
+                        <a href="https://vip00112.tistory.com" target="_blank" title="개인 블로그"><i class="fa fa-rss"></i> Blog</a>
+                    </li>
+                </ul>
+            </nav>
 
-            <div id="itemBox">
-                <h2 class="title">
-                        <!-- titleTmp -->
-                </h2>
-
-                <span>(이미지를 클릭시 원본 크기로 볼 수 있습니다.)</span>
-                <div class="box_imgs">
-                    <i class="fa fa-chevron-left left move"></i>
-                    <i class="fa fa-chevron-right right move"></i>
-
-                    <ul>
-                        <!-- imgTmp -->
-                    </ul>
-                </div>
-                <hr/>
-
-                <dl class="desc">
-                    <!-- itemTmp -->
-                </dl>
-            </div>
-            <!-- // itemBox -->
-
-            <div id="zoomBox">
-                <i class="fa fa-chevron-left left move"></i>
-                <i class="fa fa-chevron-right right move"></i>
-                <img src="" alt="스크린샷 확대" title="클릭시 이전 화면으로 돌아 갑니다.">
-            </div>
-            <!-- // zoonBox -->
+            <header>
+                <h1><a href="index.html">GT's Github page</a></h1>
+            </header>
         </div>
-        <!-- // .aux -->
+        <!-- // .container -->
     </div>
-    <!-- // content -->
+    <!-- // .wrap.header -->
 
-    <div id="footer">
-        <div class="aux">
-            <span>&copy; 2016 GT. All Rights Reserved.</span>
+    <div class="wrap main">
+        <main class="container">
+            <article>
+                <h2 class="screen_out">본문</h2>
+
+                <section>
+                    <div id="itemBox">
+                        <h2 class="title"><!-- titleTmp --></h2>
+
+                        <div class="box_imgs">
+                            <ul>
+                                <!-- imgTmp -->
+                            </ul>
+                        </div>
+                        <hr/>
+
+                        <dl class="desc">
+                            <!-- itemTmp -->
+                        </dl>
+                    </div>
+                    <!-- // itemBox -->
+                </section>
+            </article>
+        </main>
+        <!-- // main.container -->
+    </div>
+    <!-- // .wrap.main -->
+
+    <div class="wrap footer">
+        <footer class="container">
             <span>e-mail : vip00112@naver.com</span>
-        </div>
-        <!-- // .aux -->
+            <small>&copy; 2016. GT. All rights reserved.</small>
+        </footer>
+        <!-- // footer.container -->
     </div>
-    <!-- // footer -->
+    <!-- // .wrap.footer -->
 
     <!-- img template -->
     <script type="text/template" id="imgTmp">
         <% _.each(imgs, function(src) { %>
-            <li><img src="<%=src%>" alt="스크린샷" title="클릭시 원본 이미지 보기" onload="setImgSize(this)"></li>
-            <% }) %>
+            <li><img src="<%=src%>" alt="스크린샷"></li>
+        <% }) %>
     </script>
 
     <!-- item template -->
@@ -265,7 +144,7 @@
                 <a href="<%=url%>" target="_blank">
                     <%=url%>
                 </a>
-                <% }) %>
+            <% }) %>
         </dd>
 
         <dt>기획 의도</dt>
@@ -274,7 +153,7 @@
                 <p>
                     <%=text%>
                 </p>
-                <% }) %>
+            <% }) %>
         </dd>
 
         <dt>설명</dt>
@@ -283,32 +162,33 @@
                 <p>
                     <%=text%>
                 </p>
-                <% }) %>
+            <% }) %>
         </dd>
     </script>
 
     <!-- script load -->
-    <script src="js/jquery.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/underscore-min.js"></script>
+    <script src="js/fix.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+
     <script>
-        var left = 0; // #itemBox .box_imgs ul의 위치
-        var count = 0; // #itemBox .box_imgs ul>li img의 갯수
-        var maxWidth = $("#itemBox .box_imgs ul>li").width();
-        var maxHeight = $("#itemBox .box_imgs ul>li").height();
-
-        var imgList = [];
-        var viewIdx = 0;
-        var viewIdxMax = 0;
-
-        // DOM
-        var $leftBtn = $("#itemBox .box_imgs .move.left");
-        var $rightBtn = $("#itemBox .box_imgs .move.right");
-        var $leftBtnZoom = $("#zoomBox .move.left");
-        var $rightBtnZoom = $("#zoomBox .move.right");
-
         // _ template
         var imgTmpFunc = _.template($("#imgTmp").html());
         var itemTmpFunc = _.template($("#itemTmp").html());
+
+        // DOM load 완료시 초기 설정
+        $(window).load(function () {
+            var className = null;
+            var type = getParam("type");
+            if (type != null && type != "") {
+                className = type;
+            } else {
+                className = "simpleboard";
+            }
+            getItem(className);
+        });
 
         // Parameter 취득
         function getParam(param, url) {
@@ -320,196 +200,38 @@
             return string ? string[1] : null;
         };
 
-        // DOM load 완료시 초기 설정
-        $(window).load(function () {
-            var $itemMenu = null;
-            var className = null;
-            var type = getParam("type");
-            if (type != null && type != "") {
-                $itemMenu = $("#itemList li." + type);
-                className = type;
-            }
-
-            if (type == null || type == "" || $itemMenu.length == 0) {
-                $itemMenu = $("#itemList li").eq(0);
-                className = $itemMenu.attr("class");
-            }
-            getItem(className);
-            $itemMenu.addClass("on");
-        });
-
-        // 아이템 변경
-        $("#itemList li").click(function () {
-            if ($(this).hasClass("on")) {
-                return;
-            }
-            var className = $(this).attr("class");
-
-            $("#itemList li.on").removeClass("on");
-            $(this).addClass("on");
-
-            getItem(className);
-        });
-
         // item 정보 획득 ajax
         function getItem(itemName) {
             $.ajax("json/" + itemName + ".json", {
                 type: "get",
-                dataType: "json",
-                error: function (xhr, error, code) {
-                    alert("Can not load item : " + code);
-                },
-                success: function (json) {
-                    var imgCode = imgTmpFunc({
-                        imgs: json["imgs"]
-                    });
-
-                    var itemCode = itemTmpFunc({
-                        projectName: json["projectName"],
-                        useTool: json["useTool"],
-                        codeUrl: json["codeUrl"],
-                        reason: json["reason"],
-                        desc: json["desc"]
-                    });
-
-                    $("#itemBox .title").text(json["title"]);
-                    $("#itemBox .box_imgs ul").html(imgCode);
-                    $("#itemBox .desc").html(itemCode);
-
-                    viewIdx = 0;
-                    viewIdxMax = $("#itemBox .box_imgs ul li").length;
-                    imgList = [];
-                    $.each($("#itemBox .box_imgs ul li"), function () {
-                        imgList.push($(this).find("img").attr("src"));
-                    });
-
-                    resetItem();
-                }
-            });
-        }
-
-        // 아이템 초기화
-        function resetItem() {
-            var $img = $("#itemBox .box_imgs ul>li img");
-
-            left = 0;
-            count = $img.length;
-            maxWidth = $("#itemBox .box_imgs ul>li").width();
-            maxHeight = $("#itemBox .box_imgs ul>li").height();
-
-            $leftBtn.hide();
-            if (count <= 1) {
-                $rightBtn.hide();
-            } else {
-                $rightBtn.show();
-            }
-
-            $("#itemBox .box_imgs ul").css({
-                "width": (count * 1200) + "px",
-                "left": left + "px"
-            });
-        }
-
-        // img onload() : 크기 및 위치 조정
-        function setImgSize(img) {
-            var $img = $(img);
-            var width = $img.width();
-            var height = $img.height();
-            var gap = 0;
-            var per = 0;
-
-            // 넓이 조정
-            if (width > maxWidth) {
-                gap = width - maxWidth;
-                per = Math.ceil(gap / width * 100);
-                height -= Math.ceil(height / 100 * per)
-                width = maxWidth;
-            }
-
-            // 높이 조정
-            if (height > maxHeight) {
-                gap = height - maxHeight;
-                per = Math.ceil(gap / height * 100);
-                width -= Math.ceil(width / 100 * per)
-                height = maxHeight;
-            }
-
-            // 조정된 넓이/높이 반영
-            $img.width(width);
-            $img.height(height);
-
-            // 세로 위치 가운데 조정
-            // 가로 위치는 margin:auto로 맞춰져 있음
-            if ($img.height() < maxHeight) {
-                var mt = maxHeight - $img.height()
-                $img.css({
-                    "margin-top": (mt / 2) + "px"
+                dataType: "json"
+            }).fail(function (xhr, error, code) {
+                alert(error + " : " + code);
+                console.log(xhr.status + " : " + code + "\n" + xhr.responseText);
+            }).done(function (json) {
+                var imgCode = imgTmpFunc({
+                    imgs: json["imgs"]
                 });
-            }
+
+                var itemCode = itemTmpFunc({
+                    projectName: json["projectName"],
+                    useTool: json["useTool"],
+                    codeUrl: json["codeUrl"],
+                    reason: json["reason"],
+                    desc: json["desc"]
+                });
+
+                $("#itemBox .title").text(json["title"]);
+                $("#itemBox .box_imgs ul").html(imgCode);
+                $("#itemBox .desc").html(itemCode);
+
+                // slider
+                $('.box_imgs>ul').bxSlider({
+                    mode: 'fade',
+                    adaptiveHeight: true,
+                });
+            });
         }
-
-        // 이미지 좌우 이동
-        $("#itemBox .box_imgs .move").click(function () {
-            moveImg($(this));
-        });
-
-        // 확대 이미지 좌우 이동
-        $("#zoomBox .move").click(function () {
-            moveImg($(this));
-        });
-
-        // 이미지 변경
-        function moveImg($btn) {
-            if ($btn.hasClass("left")) {
-                left += maxWidth;
-                viewIdx--;
-            } else {
-                left -= maxWidth;
-                viewIdx++;
-            }
-
-            if (viewIdx < 0) {
-                viewIdx = 0;
-            } else if (viewIdx > viewIdxMax) {
-                viewIdx = viewIdxMax;
-            }
-
-            $("#itemBox .box_imgs ul").css("left", left + "px");
-            $("#zoomBox img").fadeOut(200);
-            $("#zoomBox img").attr("src", imgList[viewIdx]);
-            $("#zoomBox img").fadeIn(200);
-
-            var max = -((count * maxWidth) - maxWidth);
-
-            if (left < 0) {
-                $leftBtn.show();
-                $leftBtnZoom.show();
-            } else if (left >= 0) {
-                $leftBtn.hide();
-                $leftBtnZoom.hide();
-            }
-
-            if (left > max) {
-                $rightBtn.show();
-                $rightBtnZoom.show();
-            } else if (left <= max) {
-                $rightBtn.hide();
-                $rightBtnZoom.hide();
-            }
-        }
-
-        // 이미지 확대 보기
-        $("#itemBox .box_imgs").on("click", "ul>li img", function () {
-            var src = $(this).attr("src");
-            $("#zoomBox").fadeIn(200);
-            $("#zoomBox img").attr("src", src);
-            $("#zoomBox").scrollTop(0);
-        });
-
-        // 이미지 확대 종료
-        $("#zoomBox img").click(function () {
-            $("#zoomBox").fadeOut(200);
-        });
     </script>
 </body>
 

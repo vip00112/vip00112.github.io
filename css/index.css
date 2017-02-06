@@ -1,0 +1,98 @@
+/* 공통 CSS */
+.list:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.list li {
+    float: left;
+    border: 1px solid #aaa;
+    padding: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    transition: .2s ease;
+}
+
+.list li:hover {
+    border: 1px solid red;
+}
+
+.list li a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: #424242;
+}
+
+.list li a:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.list li a img {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+.list li a .desc {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+.list li a .desc span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 15px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.list li a .desc .project {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 20px 10px 5px 10px;
+}
+
+.list li a .desc .tool {
+    color: #828282;
+}
+
+.list li a .desc .tool,
+.list li a .desc .title {
+    min-height: 45px;
+}
+
+/* Mobile First : 기본 레이아웃은 모바일 최적화 */
+.list li {
+    width: 100%;
+}
+
+/* Tablet & Desktop : 768px 이상 해상도 */
+@media (min-width:768px) {
+    .list li a img {
+        height: 300px;
+    }
+}
+
+/* Tablet : 768px~1024px 해상도 */
+@media (min-width:768px) and (max-width:1024px) {
+    .list li {
+        width: 49%;
+        margin-right: 1%;
+        margin-bottom: 1%;
+    }
+}
+
+/* Desktop : 1025px 이상 해상도 */
+@media (min-width:1025px) {
+    .list li {
+        width: 24.5%;
+        margin-right: 0.5%;
+        margin-bottom: 0.5%;
+    }
+}

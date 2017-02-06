@@ -3,153 +3,147 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telphone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <title>GT's Page</title>
 
-    <link rel="stylesheet" href="css/reset.css" />
+    <!-- IE 9 미만 버전 javascript 미지원 기능 fix -->
+    <!--[if lt IE 9]>
+        <script src="/resources/js/ltIE9/es5-shim.min.js"></script>
+        <script src="/resources/js/ltIE9/es5-sham.min.js"></script>
+	<![endif]-->
+
     <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/noto.sans.korea.css" />
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/top.css" />
     <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <link rel="stylesheet" href="css/index.css">
+    <!-- IE 9 미만 버전 html5,반응형 지원을 위한 script
+    html5shiv.min.js : html5의 새로운 요소를 인식
+    respond.min.js : 반응형을 위한 media 쿼리를 인식 
+    -->
+    <!--[if lt IE 9]>
+        <script src="js/ltIE9/html5shiv.min.js"></script>
+        <script src="js/ltIE9/respond.min.js"></script>
+    <![endif]-->
 
     <style>
-        #wlcome {
-            font-size: 40px;
-            font-weight: 500;
-            margin-bottom: 20px;
-        }
-        
-        #portfolioList::after {
-            display: block;
-            content: "";
-            clear: both;
-        }
-        
-        #portfolioList>li {
-            width: 1198px;
-            border: 1px solid transparent;
-            transition: .2s ease;
-        }
-        
-        #portfolioList>li:hover {
-            border: 1px solid #f00;
-        }
-        
-        #portfolioList>li a {
-            display: block;
-            width: 1178px;
-            margin: 10px 0 10px 10px;
-        }
-        
-        #portfolioList>li a::after {
-            display: block;
-            content: "";
-            clear: both;
-        }
-        
-        #portfolioList>li a img {
-            display: block;
-            width: 148px;
-            height: 148px;
-            float: left;
-        }
-        
-        #portfolioList>li a .desc {
-            display: block;
-            width: 1000px;
-            float: left;
-            margin-left: 10px;
-            padding: 0 10px;
-            text-decoration: none;
-            color: #424242;
-        }
-        
-        #portfolioList>li a .desc.project_name {
-            height: 68px;
-            line-height: 68px;
-            font-size: 40px;
-        }
-        
-        #portfolioList>li a .desc.title {
-            height: 40px;
-            line-height: 40px;
-            font-size: 17px;
-        }
-        
-        #portfolioList>li a .desc.use_tool {
-            height: 40px;
-            line-height: 40px;
-        }
+
     </style>
 </head>
 
 <body>
-    <div id="header">
-        <div class="aux">
-            <ul id="gnv">
-                <li><a href="index.html" class="on" title="홈">Home</a></li>
-                <li><a href="portfolio.html" title="포트폴리오">Portfolio</a></li>
-                <li><a href="https://github.com/vip00112" target="_blank" title="github">Github</a></li>
-                <li><a href="http://vip00112.tistory.com" target="_blank" title="개인 블로그">Blog</a></li>
-            </ul>
+    <div class="wrap top">
+        <div class="container">
+            <button class="gnav" title="메뉴">
+                <span>메뉴</span>
+                <i class="fa fa-caret-down"></i>
+            </button>
         </div>
-        <!-- // .aux -->
+        <!-- // .container -->
     </div>
-    <!-- // header -->
+    <!-- // .wrap.top -->
 
-    <div id="content">
-        <div class="aux">
-            <h2 id="wlcome">Welcome to GT's Github page</h2>
+    <div class="wrap header">
+        <div class="container">
+            <nav class="gnav">
+                <ul class="menu">
+                    <li>
+                        <a href="index.html" class="on" title="홈"><i class="fa fa-home"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href="#" title="포트폴리오"><i class="fa fa-th-large"></i> Portfolio</a>
+                        <ul class="menu sub">
+                            <li><a href="portfolio.html?type=simpleboard">SimpleBoard</a></li>
+                            <li><a href="portfolio.html?type=easyon">EasyON</a></li>
+                            <li><a href="portfolio.html?type=onair">OnAir</a></li>
+                            <li><a href="portfolio.html?type=ares">ARES</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="https://github.com/vip00112" target="_blank" title="github"><i class="fa fa-github"></i> Github</a>
+                    </li>
+                    <li>
+                        <a href="https://vip00112.tistory.com" target="_blank" title="개인 블로그"><i class="fa fa-rss"></i> Blog</a>
+                    </li>
+                </ul>
+            </nav>
 
-            <ul id="portfolioList">
-                <li class="simpleboard">
-                    <!-- itemTmp -->
-                </li>
-
-                <li class="easyon">
-                    <!-- itemTmp -->
-                </li>
-
-                <li class="onair">
-                    <!-- itemTmp -->
-                </li>
-
-                <li class="ares">
-                    <!-- itemTmp -->
-                </li>
-            </ul>
+            <header>
+                <h1><a href="index.html">GT's Github page</a></h1>
+            </header>
         </div>
-        <!-- // .aux -->
+        <!-- // .container -->
     </div>
-    <!-- // content -->
+    <!-- // .wrap.header -->
+
+    <div class="wrap main">
+        <main class="container">
+            <article>
+                <h2 class="screen_out">본문</h2>
+
+                <section>
+                    <ul class="list">
+                        <li class="simpleboard">
+                            <!-- itemTmp -->
+                        </li>
+
+                        <li class="easyon">
+                            <!-- itemTmp -->
+                        </li>
+
+                        <li class="onair">
+                            <!-- itemTmp -->
+                        </li>
+
+                        <li class="ares">
+                            <!-- itemTmp -->
+                        </li>
+                    </ul>
+                </section>
+            </article>
+        </main>
+        <!-- // main.container -->
+    </div>
+    <!-- // .wrap.main -->
+
+    <div class="wrap footer">
+        <footer class="container">
+            <span>e-mail : vip00112@naver.com</span>
+            <small>&copy; 2016. GT. All rights reserved.</small>
+        </footer>
+        <!-- // footer.container -->
+    </div>
+    <!-- // .wrap.footer -->
 
     <!-- itemTmp -->
     <script type="text/template" id="itemTmp">
         <a href="portfolio.html?type=<%=type%>" title="클릭시 상세 페이지 이동">
             <img src="<%=imgs[0]%>" alt="스크린샷">
-            <h3 class="desc project_name"><%=projectName%></h3>
-            <h4 class="desc title"><%=title%></h4>
-            <h4 class="desc use_tool"><%=useTool%></h4>
+            <div class="desc">
+                <span class="project"><%=projectName%></span>
+                <span class="tool"><%=useTool%></span>
+                <span class="title"><%=title%></span>
+            </div>
         </a>
     </script>
 
-    <div id="footer">
-        <div class="aux">
-            <span>&copy; 2016 GT. All Rights Reserved.</span>
-            <span>e-mail : vip00112@naver.com</span>
-        </div>
-        <!-- // .aux -->
-    </div>
-    <!-- // footer -->
-
     <!-- script load -->
-    <script src="js/jquery.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/underscore-min.js"></script>
+    <script src="js/fix.js"></script>
+    <script src="js/common.js"></script>
+
     <script>
         var itemTmpFunc = _.template($("#itemTmp").html());
 
         // DOM load 완료시 설정
         $(window).load(function () {
-            var $items = $("#portfolioList li");
+            var $items = $(".list li");
 
             // json read ajax
             $.each($items, function () {

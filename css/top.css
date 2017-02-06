@@ -1,0 +1,49 @@
+/* Mobile First : 기본 레이아웃은 모바일 최적화 */ 
+.wrap.top,
+.wrap.top .container {
+    background-color: #f83938;
+}
+
+.wrap.top {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+
+.wrap.top .container .gnav {
+    padding: 0 5px;
+    margin: 0;
+    border: none;
+    outline: inherit;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.wrap.top .container .user {
+    float: right;
+    text-align: right;
+}
+
+.wrap.top .container .user li {
+    display: inline-block;
+    text-align: center;
+    background-color: transparent;
+}
+
+.wrap.top .container .user li>a {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    padding: 0 5px;
+}
+
+.wrap.top .container .user li>a>span {
+    padding-left: 5px;
+}
