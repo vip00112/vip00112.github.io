@@ -1,0 +1,23 @@
+{
+    "title": ".NET 기반의 간단한 그림판 Application",
+    "imgs": [
+        "img/simplepaint/1.png",
+        "img/simplepaint/2.png",
+        "img/simplepaint/3.png",
+        "img/simplepaint/4.png",
+        "img/simplepaint/5.png"
+    ],
+    "projectName": "SimplePaint",
+    "useTool": "C#",
+    "codeUrl": [
+        "https://github.com/vip00112/SimplePaint"
+    ],
+    "reason": [
+        "Memento패턴과 GDI+ 공부를 위해 만들었습니다."
+    ],
+    "desc": [
+        "GDI+ 공부를 위해 PictureBox Control의 Grapgics를 이용하였습니다.",
+        "Memento 패턴 공부를 위해 IMemento interface를 이용하여 Line,Shape를 구현 하였습니다.",
+        "Memento를 이용하여 Undo/Redo 기능을 구현 하였습니다."
+    ]
+}
